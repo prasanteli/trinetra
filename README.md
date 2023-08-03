@@ -11,7 +11,7 @@ DO below three steps to activate virtual environment
 
 - pip install virtualenv
 - virtualenv venv
-- venv\scripts\activate
+- virtualenv venv
 
 Then to install requirements, do
 
