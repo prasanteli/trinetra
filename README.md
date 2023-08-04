@@ -1,4 +1,5 @@
-# Trinetra
+# Trinetra.
+moto of website is to look alike - https://www.myscheme.gov.in/
 
 ## Basic Info
 
