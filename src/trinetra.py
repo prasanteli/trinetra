@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request 
 import json
+
 app = Flask(__name__)
 
 @app.route("/")
@@ -12,8 +13,9 @@ def about_us():
 
 @app.route("/scheme")
 def scheme():
-    with open('src\static\data.json', 'r') as f:
-        data = json.load(f)
+    with open('src\static\data\schemes.json', 'r',encoding="utf-8") as f:
+        data = f.read()
+        data = json.loads(data)
         return render_template("scheme.html",data=data)
 
 @app.route("/contact")
@@ -25,4 +27,4 @@ def login():
     return render_template("login.html")
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000,  debug=True, load_dotenv="./.flaskenv")
+    app.run(host='0.0.0.0', port=5000,  debug=True, load_dotenv=".env")
