@@ -1,29 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
   <title>Trinetra</title>
 </head>
-
 <body>
-  <header class="text-gray-600 body-font" bgcolor="beige">
+  <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <nav class="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+        <a class="mr-5 hover:text-gray-900">Home</a>
+        <a class="mr-5 hover:text-gray-900">About us</a>
+        <a class="hover:text-gray-900">Conatct info</a>
+      </nav>
+      <a class="flex order-first lg:order-none lg:w-1/5 title-font font-medium items-center text-gray-900 lg:items-center lg:justify-center mb-4 md:mb-0">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
         </svg>
         <span class="ml-3 text-xl">TRINETRA</span>
-        </a>
-        <nav class="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center, sm:motion-safe:hover:animate-spin"">
-          <a class="transform motion-safe:hover:scale-110 mr-5 hover:text-gray-900" href="{{ url_for('homepage') }}">Home</a>
-          <a class="transform motion-safe:hover:scale-110 mr-5 hover:text-gray-900" href="{{ url_for('scheme') }}">Schemes</a>
-          <a class="transform motion-safe:hover:scale-110 mr-5 hover:text-gray-900" href="{{ url_for('about_us') }}">About</a>
-          <a class="transform motion-safe:hover:scale-110 mr-5 hover:text-gray-900" href="{{ url_for('contact') }}">Contact</a>
-        </nav>
-        </svg>
+      </a>
     </div>
   </header>
-
+</body>
+</html>
