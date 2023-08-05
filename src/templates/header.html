@@ -3,18 +3,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <title>Trinetra</title>
 </head>
 <body>
   <header class="text-gray-600 body-font">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+      <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="{{ url_for('homepage')}}">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full" viewBox="0 0 24 24">
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
         </svg>
-<<<<<<< HEAD
-        <span class="ml-3 text-xl">Tailblocks</span>
-      </a>
+        <a href="{{ url_for('homepage')}}">
+        <span class="ml-3 text-xl">TRINETRA</span>
+        </a>
+      <a/>
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
           <a class="transform motion-safe:hover:scale-110 mr-5 hover:text-gray-900" href="{{ url_for('homepage') }}">Home</a>
           <a class="transform motion-safe:hover:scale-110 mr-5 hover:text-gray-900" href="{{ url_for('schemes') }}">Schemes</a>
@@ -22,9 +24,6 @@
           <a class="transform motion-safe:hover:scale-110 mr-5 hover:text-gray-900" href="{{ url_for('contact') }}">Contact</a>
         </nav>
         </svg>
-=======
-        <span class="ml-3 text-xl">TRINETRA</span>
->>>>>>> 31f8ef29223d874c5ce5dba06eb9fe07b316f2c3
       </a>
     </div>
   </header>
