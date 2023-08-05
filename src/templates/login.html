@@ -1,17 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-       <title>Trinetra</title>
-       <nav class="border-gray-200 bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
-  <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-    <a href="#" class="flex items-center">
-        <img src="https://flowbite.com/docs/images/logo.svg" class="h-8 mr-3" alt="Flowbite Logo" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-    </a>
-    </button>
+{% include 'header.html' %}
     <div class="hidden w-full" id="navbar-hamburger">
       <ul class="flex flex-col font-medium mt-4 rounded-lg bg-gray-50 dark:bg-gray-800 dark:border-gray-700">
         <li>
@@ -30,7 +17,6 @@
     </div>
   </div>
 </nav>
-
       </head>
   <body>
     <section class="text-gray-600 body-font">
@@ -62,5 +48,57 @@
           </div>
         </div>
       </section>
-  </body>
-</html>
+      <section class="text-gray-600 body-font">
+        <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+          <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+            <h1 class="title-font font-medium text-3xl text-gray-900">Discover a World of Opportunities and Schemes for
+              YOU!!</h1>
+            <p class="leading-relaxed mt-4">We understand that every individual has unique needs and aspirations. That's why
+              we offer you the flexibility to select customized government schemes that align with your specific
+              requirements.</p>
+            <p class="leading-relaxed mt-4">Our platform empowers you to tailor your welfare journey by choosing from a wide
+              range of schemes catering to women and children's welfare. Whether you're seeking educational support,
+              healthcare assistance, financial aid, or other forms of empowerment, we've got you covered.</p>
+            <p class="leading-relaxed mt-4">With TRINETRA's user-friendly interface, you can effortlessly browse through
+              various schemes, explore detailed descriptions, and filter options based on eligibility criteria. We'll guide
+              you every step of the way, ensuring you access the schemes that best suit your goals.</p>
+            <p class="leading-relaxed mt-4">Join us on this empowering voyage of personalized growth and development. Select
+              your customized schemes today and unlock a brighter future for yourself and your loved ones.</p>
+          </div>
+          <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+            <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Enter your details</h2>
+            <div class="relative mb-4">
+              <label for="full-name" class="leading-7 text-sm text-gray-600">Full Name</label>
+              <input type="text" id="full-name" name="full-name"
+                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                spellcheck="false" data-ms-editor="true">
+            </div>
+            <div class="relative mb-4">
+              <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+              <input type="email" id="email" name="email"
+                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mb-4">
+              <label for="age" class="leading-7 text-sm text-gray-600">Age</label>
+              <input type="number" id="age" name="full-name"
+                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+                spellcheck="false" data-ms-editor="true">
+            </div>
+            <div class="relative mb-4">
+              <label for="phone" class="leading-7 text-sm text-gray-600">Phone Number</label>
+              <input type="phone" id="phone" name="phone"
+                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <div class="relative mb-4">
+              <label for="password" class="leading-7 text-sm text-gray-600">Password</label>
+              <input type="password" autocomplete="new-password"
+                class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+            </div>
+            <button
+              class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Sign
+              up</button>
+            <p class="text-xs text-gray-500 mt-3">Sign up now to access exclusive benefits and stay updated on the latest
+              government schemes for women and children</p>
+          </div>
+        </div>
+{% include 'footer.html' %}

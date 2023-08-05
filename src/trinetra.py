@@ -15,6 +15,15 @@ def about_us():
 def contact():
     return render_template("contact.html")
 
+@app.route("/details_form", methods=["GET","POST"])
+def details_form():
+    if request.method == "POST":
+        # request.values.get("name")
+        pass
+    return render_template("details_form.html")
+
+# details_form.html
+
 @app.route("/login")
 def login():
     return render_template("login.html")
@@ -30,6 +39,8 @@ def header():
 @app.route("/verification")
 def verification():
     return render_template("verification.html")
+
+
 
 @app.route("/schemes")
 def schemes():

@@ -1,40 +1,4 @@
 {% include 'header.html' %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Satisfy&display=swap" rel="stylesheet" />
-    <title>TRINETRA</title>
-</head>
-<body>
-<style>
-  html {
-    font-family: 'Inter', sans-serif;
-  }
-  main .title {text-shadow: 0 0 0.125em rgb(192 38 211 / 0.5), 0 0 0.45em currentColor;}
-  main .cursive {font-family: 'Satisfy', cursive; text-shadow: 0 0 0.125em rgb(192 38 211 / 0.5), 0 0 0.45em currentColor;
-}
-  /* Reflection Color */
-  main #main_container::before {
-    content: "";
-    width:100%;
-    height:100%;
-    top:120%;
-    left:0;
-    position:absolute;
-    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
-  }
-</style>
-<main class="grid min-h-screen place-content-center place-items-center overflow-hidden bg-gradient-to-b from-slate-900 to-black">
-    <div id="main_container" 
-  class="relative grid place-content-center place-items-center gap-2 before:bg-gradient-to-t before:from-teal-500/70 before:via-fuchsia-600 before:to-transparent before:blur-xl before:filter">
-    <h1 class="title text-6xl font-black text-teal-500">TRINETRA</h1>
-    <h2 class="cursive text-6xl font-thin text-fuchsia-600">Connecting communitirs for Prosperity</h2>
-  </div>
-</main>
 <script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
 
 <article x-data="slider" class="relative w-full flex flex-shrink-0 overflow-hidden shadow-2xl">
@@ -44,11 +8,13 @@
     </div>
 
     <template x-for="(image, index) in images">
-        <figure class="h-96" x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300"
+        <figure class="h-full p-72" x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300"
         x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
         x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100"
         x-transition:leave-end="opacity-0">
-        <img :src="image" alt="Image" class="absolute inset-0 z-10 h-full w-full object-cover opacity-70" />
+        <p class="text-7xl font-semibold h-auto p-5">Government Schemes For You</p>
+        <p class="text-3xl font-semibold h-auto p-2 ">Discover all Governmnet Schemes on one portal stop</p>
+        <img :src="image" alt="Image" class="absolute inset-0 z-15 h-full w-full object-cover opacity-60" />
         </figure>
     </template>
 
@@ -98,10 +64,12 @@
 </script>
 </section>
 <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto">
+    <div class="container px-5 py-10 mx-auto">
       <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
         <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">#GOVERMENTSCHEMES/#SCHEMEFORYOU</h1>
-        <button class="flex mx-auto mt-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Find Schemes For You</button>
+<a href="{{ url_for('details_form') }}">
+        <button class="flex mx-auto mt-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" >Find Schemes For You</button>
+</a>
     </div>
     </div>
   </section>
@@ -120,209 +88,48 @@
     </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
       <img class="object-cover object-center rounded" alt="hero"
-        src="https://source.unsplash.com/720x600/?women,empowerment">
+        src="https://source.unsplash.com/720x600/?indian">
     </div>
   </div>
-  <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
-      <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-        <h1 class="title-font font-medium text-3xl text-gray-900">Discover a World of Opportunities and Schemes for
-          YOU!!</h1>
-        <p class="leading-relaxed mt-4">We understand that every individual has unique needs and aspirations. That's why
-          we offer you the flexibility to select customized government schemes that align with your specific
-          requirements.</p>
-        <p class="leading-relaxed mt-4">Our platform empowers you to tailor your welfare journey by choosing from a wide
-          range of schemes catering to women and children's welfare. Whether you're seeking educational support,
-          healthcare assistance, financial aid, or other forms of empowerment, we've got you covered.</p>
-        <p class="leading-relaxed mt-4">With TRINETRA's user-friendly interface, you can effortlessly browse through
-          various schemes, explore detailed descriptions, and filter options based on eligibility criteria. We'll guide
-          you every step of the way, ensuring you access the schemes that best suit your goals.</p>
-        <p class="leading-relaxed mt-4">Join us on this empowering voyage of personalized growth and development. Select
-          your customized schemes today and unlock a brighter future for yourself and your loved ones.</p>
-      </div>
-      <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-        <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Enter your details</h2>
-        <div class="relative mb-4">
-          <label for="full-name" class="leading-7 text-sm text-gray-600">Full Name</label>
-          <input type="text" id="full-name" name="full-name"
-            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            spellcheck="false" data-ms-editor="true">
+  <section><section id="howitworks" class="relative bg-no-repeat py-12 md:py-20 bg-gradient-to-t from-blue-50 to-white z-0 relative after:absolute after:-bottom-6  after:right-0 lg:after:right-0 after:w-full after:h-0 after:border-green-50 after:border-[40px] after:border-solid after:-z-10 after:rotate-[2deg] after:transform mb-20"><div class="container mx-auto px-8 lg:px-0 2xl:w-3/5 lg:w-5/6 relative   "><div class="mb-20 flex flex-col items-center justify-start w-full"><p class="text-xl text-darkIndigo-300 text-center mb-2">How it works</p><h2 class="text-3xl sm:text-4xl text-center px-8 font-extrabold leading-snug">Easy steps to apply</h2><h2 class="text-3xl sm:text-4xl text-center px-8 font-extrabold leading-snug">for all Schemes</h2></div><div class=" grid grid-cols-1 md:flex flex-wrap  gap-4  justify-between items-center relative z-0 !block lg:!flex flex-nowrap lg:!gap-x-[40px] !gap-y-10 lg:!gap-y-0 after:bg-gray-100 after:absolute after:top-0 lg:after:top-1/2 after:left-1/2 lg:after:left-0 after:w-0.5 after:h-full lg:after:w-full lg:after:h-0.5 after:-z-10 mb-10 lg:mb-0"><div class="absolute rounded-full w-20 h-20 z-0 bg-blue-100 -bottom-7 -right-1 lg:-right-7"></div><div class="absolute opacity-70 -top-16 -left-20 w-36 h-40 z-0 bg-repeat bg-shape-one"></div><div class=" flex-1 "><div class="relative bg-white flex z-10 rounded-lg shadow-xl hover:shadow-2xl transition-all hover:animate-bounceOnce p-8
+    false
+    "><div class="relative z-20 bg-white w-full h-full rounded-lg flex flex-col items-center gap-3 ">
+        <div class="h-16">
+            <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;">
+                <span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;">
+                    <img alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2761%27%20height=%2761%27/%3e" style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;">
+                </span><img alt="[object Object]" title="[object Object]" src="https://cdn.myscheme.in/images/icons/check.svg" decoding="async" data-nimg="intrinsic" class="border-0 " srcset="https://cdn.myscheme.in/images/icons/check.svg 1x, https://cdn.myscheme.in/images/icons/check.svg 2x" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;">
+            </span>
         </div>
-        <div class="relative mb-4">
-          <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-          <input type="email" id="email" name="email"
-            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-        </div>
-        <div class="relative mb-4">
-          <label for="age" class="leading-7 text-sm text-gray-600">Age</label>
-          <input type="number" id="age" name="full-name"
-            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            spellcheck="false" data-ms-editor="true">
-        </div>
-        <div class="relative mb-4">
-          <label for="phone" class="leading-7 text-sm text-gray-600">Phone Number</label>
-          <input type="phone" id="phone" name="phone"
-            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-        </div>
-        <div class="relative mb-4">
-          <label for="password" class="leading-7 text-sm text-gray-600">Password</label>
-          <input type="password" autocomplete="new-password"
-            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-        </div>
-        <button
-          class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Sign
-          up</button>
-        <p class="text-xs text-gray-500 mt-3">Sign up now to access exclusive benefits and stay updated on the latest
-          government schemes for women and children</p>
-      </div>
+        <h3 class="text-xl font-semibold text-blue-600">Enter Details</h3>
+        <span class="text-center">
+            <span>Start by entering your 
+                <strong>basic details!</strong>
+            </span>
+        </span>
     </div>
-    <div id="team" class="section relative pt-20 pb-8 md:pt-16 bg-white dark:bg-gray-800">
-      <div class="container xl:max-w-6xl mx-auto px-4">
-          <!-- section header -->
-          <header class="text-center mx-auto mb-4">
-              <h2 class="text-2xl leading-normal mb-3 font-bold text-gray-800 dark:text-gray-100">
-                  <span class="font-light">OUR</span> TEAM
-              </h2>
-              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 60" style="margin: 0 auto;height: 35px;" xml:space="preserve">
-                  <circle cx="50.1" cy="30.4" r="5" class="stroke-primary" style="fill: transparent;stroke-width: 2;stroke-miterlimit: 10;"></circle>
-                  <line x1="55.1" y1="30.4" x2="100" y2="30.4" class="stroke-primary" style="stroke-width: 2;stroke-miterlimit: 10;"></line>
-                  <line x1="45.1" y1="30.4" x2="0" y2="30.4" class="stroke-primary" style="stroke-width: 2;stroke-miterlimit: 10;"></line>
-              </svg>
-          </header>
-          <!-- end section header -->
-          <!-- row -->
-          <div class="flex flex-wrap flex-row -mx-4 justify-center">
-              <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
-                  <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
-                      <!-- team block -->
-                      <div class="relative overflow-hidden px-6">
-                          <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar1.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
-                      </div>
-                      <div class="pt-6 text-center">
-                          <p class="text-lg leading-normal font-bold mb-1">Prasan Teli</p>
-                          <p class="text-gray-500 leading-relaxed font-light">Founder CEO</p>
-                          <!-- social icon -->
-                          <div class="mt-2 mb-5 space-x-2">
-                              <a class="hover:text-blue-700" aria-label="Twitter link" href="www.twitter.com/prasanteli">
-                                  <!-- <i class="fab fa-twitter text-twitter"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Facebook link" href="www.facebook.com/prasanteli">
-                                  <!-- <i class="fab fa-facebook text-facebook"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Instagram link" href="www.instagram.com/prasanteli">
-                                  <!-- <i class="fab fa-instagram text-instagram"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"></path>
-                                      <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"></path>
-                                      <path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Linkedin link" href="www.lindedin.com/prasanteli">
-                                  <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"></path>
-                                  </svg>
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- end team block -->
-              </div>
-              <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
-                  <!-- team block -->
-                  <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
-                      <div class="relative overflow-hidden px-6">
-                          <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
-                      </div>
-                      <div class="pt-6 text-center">
-                          <p class="text-lg leading-normal font-bold mb-1">Vidyashree Hebbar</p>
-                          <p class="text-gray-500 leading-relaxed font-light">Software Developer</p>
-                          <!-- social icon -->
-                          <div class="mt-2 mb-5 space-x-2">
-                              <a class="hover:text-blue-700" aria-label="Twitter link" href="www.twitter.com/vidyahebbar04">
-                                  <!-- <i class="fab fa-twitter text-twitter"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Facebook link" href="www.facebook.com/vidyahebbar04">
-                                  <!-- <i class="fab fa-facebook text-facebook"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Instagram link" href="www.instagram.com/vidyahebbar04">
-                                  <!-- <i class="fab fa-instagram text-instagram"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"></path>
-                                      <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"></path>
-                                      <path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Linkedin link" href="www.lindedin.com/vidyahebbar04">
-                                  <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"></path>
-                                  </svg>
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- end team block -->
-              </div>
-              <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
-                  <!-- team block -->
-                  <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
-                      <div class="relative overflow-hidden px-6">
-                          <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
-                      </div>
-                      <div class="pt-6 text-center">
-                          <p class="text-lg leading-normal font-bold mb-1">Tejas Murgod</p>
-                          <p class="text-gray-500 leading-relaxed font-light">Developer</p>
-                          <!-- social icon -->
-                          <div class="mt-2 mb-5 space-x-2">
-                              <a class="hover:text-blue-700" aria-label="Twitter link" href="www.twitter.com/tejasmurgod">
-                                  <!-- <i class="fab fa-twitter text-twitter"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Facebook link" href="www.facebook.com/tejasmurgod">
-                                  <!-- <i class="fab fa-facebook text-facebook"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Instagram link" href="www.instagram.com/tejasmurgod">
-                                  <!-- <i class="fab fa-instagram text-instagram"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"></path>
-                                      <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"></path>
-                                      <path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"></path>
-                                  </svg>
-                              </a>
-                              <a class="hover:text-blue-700" aria-label="Linkedin link" href="www.lindedin.com/tejasmurgod">
-                                  <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
-                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
-                                      <path fill="currentColor" d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"></path>
-                                  </svg>
-                              </a>
-                          </div>
-                      </div>
-                  </div>
-                  <!-- end team block -->
-              </div>
-          </div>
-          <!-- end row -->
-      </div>
-  </div>
-  </section>
+</div>
+</div>
+<div class="flex justify-center items-center gap-0 transform rotate-90 lg:rotate-0">
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 192 512" class="text-darkIndigo-50" height="40" width="40" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"></path>
+    </svg>
+    <svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="text-darkIndigo-50 -ml-12" height="80" width="80" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7">
+        </path>
+    </svg>
+</div>
+<div class=" flex-1 ">
+    <div class="relative bg-white flex z-10 rounded-lg shadow-xl hover:shadow-2xl transition-all hover:animate-bounceOnce p-8 true">
+        <div class="relative z-20 bg-white w-full h-full rounded-lg flex flex-col items-center gap-3 ">
+
+        <div class="h-16">
+            <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2761%27%20height=%2761%27/%3e" style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img alt="[object Object]" title="[object Object]" src="https://cdn.myscheme.in/images/icons/search.svg" decoding="async" data-nimg="intrinsic" class="border-0 " srcset="https://cdn.myscheme.in/images/icons/search.svg 1x, https://cdn.myscheme.in/images/icons/search.svg 2x" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"><noscript></noscript></span></div><h3 class="text-xl font-semibold text-blue-600">Search</h3><span class="text-center"><span>Our search engine will <strong>find the relevant schemes</strong>!</span></span></div></div></div><div class="flex justify-center items-center gap-0 transform rotate-90 lg:rotate-0"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 192 512" class="text-darkIndigo-50" height="40" width="40" xmlns="http://www.w3.org/2000/svg"><path d="M0 384.662V127.338c0-17.818 21.543-26.741 34.142-14.142l128.662 128.662c7.81 7.81 7.81 20.474 0 28.284L34.142 398.804C21.543 411.404 0 402.48 0 384.662z"></path></svg><svg stroke="currentColor" fill="none" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true" class="text-darkIndigo-50 -ml-12" height="80" width="80" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"></path></svg></div><div class=" flex-1 "><div class="relative bg-white flex z-10 rounded-lg shadow-xl hover:shadow-2xl transition-all hover:animate-bounceOnce p-8
+    false
+    "><div class="relative z-20 bg-white w-full h-full rounded-lg flex flex-col items-center gap-3 ">
+        <div class="h-16">
+            <span style="box-sizing: border-box; display: inline-block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: relative; max-width: 100%;"><span style="box-sizing: border-box; display: block; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; max-width: 100%;"><img alt="" aria-hidden="true" src="data:image/svg+xml,%3csvg%20xmlns=%27http://www.w3.org/2000/svg%27%20version=%271.1%27%20width=%2747%27%20height=%2761%27/%3e" style="display: block; max-width: 100%; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px;"></span><img alt="[object Object]" title="[object Object]" src="https://cdn.myscheme.in/images/icons/apply.svg" decoding="async" data-nimg="intrinsic" class="border-0 " srcset="https://cdn.myscheme.in/images/icons/apply.svg 1x, https://cdn.myscheme.in/images/icons/apply.svg 2x" style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"><noscript></noscript></span></div><h3 class="text-xl font-semibold text-blue-600">Select &amp; Apply</h3><span class="text-center"><span><strong>Select and apply</strong> for the best suited scheme</span></span></div></div></div></div></div></section>
+        </section>
 <body> 
 </body>
 </html>
