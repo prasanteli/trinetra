@@ -1,56 +1,126 @@
 {% include 'header.html' %}
-<section class="text-gray-400 bg-gray-900 body-font">
-  <div class="container px-5 py-24 mx-auto flex flex-col">
-    <div class="lg:w-4/6 mx-auto">
-      <div class="rounded-lg h-64 overflow-hidden">
-        <img alt="content" class="object-cover object-center h-full w-full"
-          src="https://source.unsplash.com/2140x1080/?karnataka,politics">
-      </div>
-      <p class="leading-relaxed text-lg mb-4">Welcome to TRINETRA, a dedicated platform for women and child welfare in
-        India. Our mission is to empower women and children by providing access to essential information about
-        government schemes and initiatives designed to improve their lives.</p>
-      <p class="leading-relaxed text-lg mb-4">At TRINETRA, we believe in the power of knowledge and awareness. Our
-        website serves as a comprehensive repository of schemes launched by the Indian government that focus on the
-        well-being and development of women and children across various sectors.</p>
-      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-        class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-      </svg>
-      </a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=Satisfy&display=swap" rel="stylesheet" />
+    <title>TRINETRA</title>
+</head>
+<body>
+<style>
+  html {
+    font-family: 'Inter', sans-serif;
+  }
+  main .title {text-shadow: 0 0 0.125em rgb(192 38 211 / 0.5), 0 0 0.45em currentColor;}
+  main .cursive {font-family: 'Satisfy', cursive; text-shadow: 0 0 0.125em rgb(192 38 211 / 0.5), 0 0 0.45em currentColor;
+}
+  /* Reflection Color */
+  main #main_container::before {
+    content: "";
+    width:100%;
+    height:100%;
+    top:120%;
+    left:0;
+    position:absolute;
+    transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  }
+</style>
+<main class="grid min-h-screen place-content-center place-items-center overflow-hidden bg-gradient-to-b from-slate-900 to-black">
+    <div id="main_container" 
+  class="relative grid place-content-center place-items-center gap-2 before:bg-gradient-to-t before:from-teal-500/70 before:via-fuchsia-600 before:to-transparent before:blur-xl before:filter">
+    <h1 class="title text-6xl font-black text-teal-500">TRINETRA</h1>
+    <h2 class="cursive text-6xl font-thin text-fuchsia-600">Connecting communitirs for Prosperity</h2>
+  </div>
+</main>
+<script defer src="https://unpkg.com/alpinejs@3.2.3/dist/cdn.min.js"></script>
+
+<article x-data="slider" class="relative w-full flex flex-shrink-0 overflow-hidden shadow-2xl">
+    <div class="rounded-full bg-gray-600 text-white absolute top-5 right-5 text-sm px-2 text-center z-10">
+        <span x-text="currentIndex"></span>/
+        <span x-text="images.length"></span>
     </div>
-  </div>
-  </div>
-  </div>
+
+    <template x-for="(image, index) in images">
+        <figure class="h-96" x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300"
+        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0">
+        <img :src="image" alt="Image" class="absolute inset-0 z-10 h-full w-full object-cover opacity-70" />
+        </figure>
+    </template>
+
+    <button @click="back()"
+        class="absolute left-14 top-1/2 -translate-y-1/2 w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200">
+        <svg class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:-translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 19l-7-7 7-7">
+            </path>
+        </svg>
+    </button>
+
+    <button @click="next()"
+    class="absolute right-14 top-1/2 translate-y-1/2 w-11 h-11 flex justify-center items-center rounded-full shadow-md z-10 bg-gray-100 hover:bg-gray-200">
+        <svg class=" w-8 h-8 font-bold transition duration-500 ease-in-out transform motion-reduce:transform-none text-gray-500 hover:text-gray-600 hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M9 5l7 7-7 7"></path>
+        </svg>
+    </button>
+</article>
+
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('slider', () => ({
+            currentIndex: 1,
+            images: [
+                'https://source.unsplash.com/1600x900/?vidhana-soudha',
+                'https://source.unsplash.com/1600x900/?red-fort-delhi',
+                'https://source.unsplash.com/1600x900/?indian-performance',
+                'https://source.unsplash.com/1600x900/?india',
+                'https://source.unsplash.com/1600x900/?india-gate'
+            ],
+            back() {
+                if (this.currentIndex > 1) {
+                    this.currentIndex = this.currentIndex - 1;
+                }
+            },
+            next() {
+                if (this.currentIndex < this.images.length) {
+                    this.currentIndex = this.currentIndex + 1;
+                } else if (this.currentIndex <= this.images.length){
+                    this.currentIndex = this.images.length - this.currentIndex + 1
+                }
+            },
+        }))
+    })
+</script>
 </section>
+<section class="text-gray-600 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
+        <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">#GOVERMENTSCHEMES/#SCHEMEFORYOU</h1>
+        <button class="flex mx-auto mt-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Find Schemes For You</button>
+    </div>
+    </div>
+  </section>
 <section class="text-gray-600 body-font">
   <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
     <div
-      class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Empowering Women and Children for a
-        Brighter Tomorrow
-      </h1>
-      <p class="mb-3 leading-relaxed">"Welcome to TRINETRA, your gateway to a world of support and welfare for women and
-        children. Our platform is designed to provide you with comprehensive information about government schemes and
-        initiatives aimed at enhancing the lives of women and children across various sectors. Empowerment begins with
-        knowledge, and here, you'll find a treasure trove of opportunities that can transform lives."</p>
-      <p class="mb-3 leading-relaxed">"Through TRINETRA, we strive to bridge the gap between government welfare programs
-        and the beneficiaries they are designed to serve. Our goal is to ensure that every woman and child in need has
-        access to the resources and support they deserve. Whether it's education, health, financial assistance, or
-        protection from violence, we are here to guide you through the available schemes and help you make the most of
-        these opportunities."</p>
-      <p class="mb-3 leading-relaxed">"Join our ever-growing community of change-makers, where women and children are at
-        the heart of our mission. When you sign up, you gain access to exclusive benefits, updates on the latest
-        schemes, and inspiring success stories of those whose lives have been transformed through these initiatives.
-        Together, we can create a more inclusive and empowered society for women and children."</p>
-      <p class="mb-3 leading-relaxed">"TRINETRA is more than just a website; it's a movement driven by compassion and
-        hope. As we embark on this journey together, we invite you to explore the wealth of knowledge and support
-        available to uplift women and children in India. Sign up today and be part of the positive change that TRINETRA
-        is bringing to the lives of millions."</p>
+      class="lg:flex-grow md:w-3/4 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+      <h1 class="title-font sm:text-5xl text-5xl mb-4 font-medium text-gray-900">About us</h1>
+      <h2 class="title-font sm:text-2xl text-3xl mb-4 font-medium text-gray-600">Empowering Women and Children for a Brighter Tomorrow</h2>
+
+        <p class="mb-4 leading-relaxed">It provides an innovative, technology-based solution to discover scheme information based upon the eligibility of the citizen. </p>
+        <p class="mb-4 leading-relaxed">The platform helps the citizen to find the right Government schemes for them. It also guides on how to apply for different Government schemes.Thus no need to visit multiple Government websites."</p>
       <div class="flex justify-center">
+        <button class="mb-4 py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">View more</button>
       </div>
     </div>
     <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
       <img class="object-cover object-center rounded" alt="hero"
-        src="https://source.unsplash.com/720x600/?indian,women">
+        src="https://source.unsplash.com/720x600/?women,empowerment">
     </div>
   </div>
   <section class="text-gray-600 body-font">
@@ -106,5 +176,154 @@
           government schemes for women and children</p>
       </div>
     </div>
+    <div id="team" class="section relative pt-20 pb-8 md:pt-16 bg-white dark:bg-gray-800">
+      <div class="container xl:max-w-6xl mx-auto px-4">
+          <!-- section header -->
+          <header class="text-center mx-auto mb-4">
+              <h2 class="text-2xl leading-normal mb-3 font-bold text-gray-800 dark:text-gray-100">
+                  <span class="font-light">OUR</span> TEAM
+              </h2>
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 60" style="margin: 0 auto;height: 35px;" xml:space="preserve">
+                  <circle cx="50.1" cy="30.4" r="5" class="stroke-primary" style="fill: transparent;stroke-width: 2;stroke-miterlimit: 10;"></circle>
+                  <line x1="55.1" y1="30.4" x2="100" y2="30.4" class="stroke-primary" style="stroke-width: 2;stroke-miterlimit: 10;"></line>
+                  <line x1="45.1" y1="30.4" x2="0" y2="30.4" class="stroke-primary" style="stroke-width: 2;stroke-miterlimit: 10;"></line>
+              </svg>
+          </header>
+          <!-- end section header -->
+          <!-- row -->
+          <div class="flex flex-wrap flex-row -mx-4 justify-center">
+              <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                  <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" style="visibility: visible; animation-duration: 1s; animation-name: fadeInUp;">
+                      <!-- team block -->
+                      <div class="relative overflow-hidden px-6">
+                          <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar1.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                      </div>
+                      <div class="pt-6 text-center">
+                          <p class="text-lg leading-normal font-bold mb-1">Prasan Teli</p>
+                          <p class="text-gray-500 leading-relaxed font-light">Founder CEO</p>
+                          <!-- social icon -->
+                          <div class="mt-2 mb-5 space-x-2">
+                              <a class="hover:text-blue-700" aria-label="Twitter link" href="www.twitter.com/prasanteli">
+                                  <!-- <i class="fab fa-twitter text-twitter"></i> -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"></path>
+                                  </svg>
+                              </a>
+                              <a class="hover:text-blue-700" aria-label="Facebook link" href="www.facebook.com/prasanteli">
+                                  <!-- <i class="fab fa-facebook text-facebook"></i> -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"></path>
+                                  </svg>
+                              </a>
+                              <a class="hover:text-blue-700" aria-label="Instagram link" href="www.instagram.com/prasanteli">
+                                  <!-- <i class="fab fa-instagram text-instagram"></i> -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"></path>
+                                      <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"></path>
+                                      <path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"></path>
+                                  </svg>
+                              </a>
+                              <a class="hover:text-blue-700" aria-label="Linkedin link" href="www.lindedin.com/prasanteli">
+                                  <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"></path>
+                                  </svg>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- end team block -->
+              </div>
+              <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                  <!-- team block -->
+                  <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".1s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
+                      <div class="relative overflow-hidden px-6">
+                          <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar3.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                      </div>
+                      <div class="pt-6 text-center">
+                          <p class="text-lg leading-normal font-bold mb-1">Vidyashree Hebbar</p>
+                          <p class="text-gray-500 leading-relaxed font-light">Software Developer</p>
+                          <!-- social icon -->
+                          <div class="mt-2 mb-5 space-x-2">
+                              <a class="hover:text-blue-700" aria-label="Twitter link" href="www.twitter.com/vidyahebbar04">
+                                  <!-- <i class="fab fa-twitter text-twitter"></i> -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"></path>
+                                  </svg>
+                              </a>
+                              <a class="hover:text-blue-700" aria-label="Facebook link" href="www.facebook.com/vidyahebbar04">
+                                  <!-- <i class="fab fa-facebook text-facebook"></i> -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"></path>
+                                  </svg>
+                              </a>
+                              <a class="hover:text-blue-700" aria-label="Instagram link" href="www.instagram.com/vidyahebbar04">
+                                  <!-- <i class="fab fa-instagram text-instagram"></i> -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"></path>
+                                      <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"></path>
+                                      <path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"></path>
+                                  </svg>
+                              </a>
+                              <a class="hover:text-blue-700" aria-label="Linkedin link" href="www.lindedin.com/vidyahebbar04">
+                                  <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"></path>
+                                  </svg>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- end team block -->
+              </div>
+              <div class="flex-shrink max-w-full px-4 w-2/3 sm:w-1/2 md:w-5/12 lg:w-1/4 xl:px-6">
+                  <!-- team block -->
+                  <div class="relative overflow-hidden bg-white dark:bg-gray-800 mb-12 hover-grayscale-0 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".3s" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                      <div class="relative overflow-hidden px-6">
+                          <img src="https://tailone.tailwindtemplate.net/src/img/dummy/avatar2.png" class="max-w-full h-auto mx-auto rounded-full bg-gray-50 grayscale" alt="title image">
+                      </div>
+                      <div class="pt-6 text-center">
+                          <p class="text-lg leading-normal font-bold mb-1">Tejas Murgod</p>
+                          <p class="text-gray-500 leading-relaxed font-light">Developer</p>
+                          <!-- social icon -->
+                          <div class="mt-2 mb-5 space-x-2">
+                              <a class="hover:text-blue-700" aria-label="Twitter link" href="www.twitter.com/tejasmurgod">
+                                  <!-- <i class="fab fa-twitter text-twitter"></i> -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M496,109.5a201.8,201.8,0,0,1-56.55,15.3,97.51,97.51,0,0,0,43.33-53.6,197.74,197.74,0,0,1-62.56,23.5A99.14,99.14,0,0,0,348.31,64c-54.42,0-98.46,43.4-98.46,96.9a93.21,93.21,0,0,0,2.54,22.1,280.7,280.7,0,0,1-203-101.3A95.69,95.69,0,0,0,36,130.4C36,164,53.53,193.7,80,211.1A97.5,97.5,0,0,1,35.22,199v1.2c0,47,34,86.1,79,95a100.76,100.76,0,0,1-25.94,3.4,94.38,94.38,0,0,1-18.51-1.8c12.51,38.5,48.92,66.5,92.05,67.3A199.59,199.59,0,0,1,39.5,405.6,203,203,0,0,1,16,404.2,278.68,278.68,0,0,0,166.74,448c181.36,0,280.44-147.7,280.44-275.8,0-4.2-.11-8.4-.31-12.5A198.48,198.48,0,0,0,496,109.5Z"></path>
+                                  </svg>
+                              </a>
+                              <a class="hover:text-blue-700" aria-label="Facebook link" href="www.facebook.com/tejasmurgod">
+                                  <!-- <i class="fab fa-facebook text-facebook"></i> -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M455.27,32H56.73A24.74,24.74,0,0,0,32,56.73V455.27A24.74,24.74,0,0,0,56.73,480H256V304H202.45V240H256V189c0-57.86,40.13-89.36,91.82-89.36,24.73,0,51.33,1.86,57.51,2.68v60.43H364.15c-28.12,0-33.48,13.3-33.48,32.9V240h67l-8.75,64H330.67V480h124.6A24.74,24.74,0,0,0,480,455.27V56.73A24.74,24.74,0,0,0,455.27,32Z"></path>
+                                  </svg>
+                              </a>
+                              <a class="hover:text-blue-700" aria-label="Instagram link" href="www.instagram.com/tejasmurgod">
+                                  <!-- <i class="fab fa-instagram text-instagram"></i> -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M349.33,69.33a93.62,93.62,0,0,1,93.34,93.34V349.33a93.62,93.62,0,0,1-93.34,93.34H162.67a93.62,93.62,0,0,1-93.34-93.34V162.67a93.62,93.62,0,0,1,93.34-93.34H349.33m0-37.33H162.67C90.8,32,32,90.8,32,162.67V349.33C32,421.2,90.8,480,162.67,480H349.33C421.2,480,480,421.2,480,349.33V162.67C480,90.8,421.2,32,349.33,32Z"></path>
+                                      <path fill="currentColor" d="M377.33,162.67a28,28,0,1,1,28-28A27.94,27.94,0,0,1,377.33,162.67Z"></path>
+                                      <path fill="currentColor" d="M256,181.33A74.67,74.67,0,1,1,181.33,256,74.75,74.75,0,0,1,256,181.33M256,144A112,112,0,1,0,368,256,112,112,0,0,0,256,144Z"></path>
+                                  </svg>
+                              </a>
+                              <a class="hover:text-blue-700" aria-label="Linkedin link" href="www.lindedin.com/tejasmurgod">
+                                  <!-- <i class="fab fa-linkedin text-linkedin"></i> -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" class="inline-block" width="1rem" height="1rem" viewBox="0 0 512 512">
+                                      <path fill="currentColor" d="M444.17,32H70.28C49.85,32,32,46.7,32,66.89V441.61C32,461.91,49.85,480,70.28,480H444.06C464.6,480,480,461.79,480,441.61V66.89C480.12,46.7,464.6,32,444.17,32ZM170.87,405.43H106.69V205.88h64.18ZM141,175.54h-.46c-20.54,0-33.84-15.29-33.84-34.43,0-19.49,13.65-34.42,34.65-34.42s33.85,14.82,34.31,34.42C175.65,160.25,162.35,175.54,141,175.54ZM405.43,405.43H341.25V296.32c0-26.14-9.34-44-32.56-44-17.74,0-28.24,12-32.91,23.69-1.75,4.2-2.22,9.92-2.22,15.76V405.43H209.38V205.88h64.18v27.77c9.34-13.3,23.93-32.44,57.88-32.44,42.13,0,74,27.77,74,87.64Z"></path>
+                                  </svg>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+                  <!-- end team block -->
+              </div>
+          </div>
+          <!-- end row -->
+      </div>
+  </div>
   </section>
+<body> 
+</body>
+</html>
   {% include 'footer.html' %}
