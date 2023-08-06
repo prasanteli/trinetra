@@ -40,6 +40,10 @@ def login():
 def footer():
     return render_template("footer.html")
 
+@app.route("/terms_conditions")
+def terms_conditions():
+    return render_template("terms_conditions.html")
+
 @app.route("/header")
 def header():
     return render_template("header.html")
@@ -53,10 +57,6 @@ def schemes():
 @app.route("/index")
 def index():
     return render_template("NEW/index.html")
-
-
-
-
 def read_json_data():
     with open('src\static\data\schemes.json', 'r',encoding="utf-8") as f:
         data = f.read()
