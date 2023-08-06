@@ -1,52 +1,65 @@
 {% include 'header.html' %}
 <section class="text-gray-600 body-font">
-    <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
-      <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-        <h1 class="title-font font-medium text-6xl text-gray-900">Welcome to TRINETRA</h1>
-        <p class="leading-relaxed text-2xl mt-4">Your Vision for Women and Child Welfare</p>
-      </div>
-      <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-        <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Fill the details to view your selected Schemes</h2>
-        <form id="myForm">
+  <div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+    <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+      <h1 class="title-font font-medium text-6xl text-gray-900">Welcome to TRINETRA</h1>
+      <p class="leading-relaxed text-2xl mt-4">Your Vision for Women and Child Welfare</p>
+    </div>
+    <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+      <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Fill the details to view your selected Schemes</h2>
+      <form id="myForm" method="POST">
         <div class="relative mb-4">
           <label for="full-name" class="leading-7 text-sm text-gray-600">Full Name</label>
           <input type="text" id="full-name" name="full-name"
-            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "required
-            spellcheck="false" data-ms-editor="true">
+            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out "
+            required spellcheck="false" data-ms-editor="true">
         </div>
         <div class="relative mb-4">
           <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
           <input type="email" id="email" name="email"
-            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            required>
         </div>
         <div class="relative mb-4">
           <label for="age" class="leading-7 text-sm text-gray-600">Age</label>
-          <input type="number" id="age" name="full-name"
-            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required
-            spellcheck="false" data-ms-editor="true" required>
+          <input type="number" id="age" name="age"
+            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            required spellcheck="false" data-ms-editor="true" required>
         </div>
         <div class="relative mb-4">
-            <label for="gender" class="block text-gray-700">Gender:</label>
-            <select id="gender" name="gender" class="block w-full mt-3 bg-gray-100 border-gray-300 focus:ring focus:ring-blue-200 focus:bg-white rounded-md" required>
-                <option value="" disabled selected>Select your gender</option>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
-                <option value="other">Other</option>
-            </select>
+          <label for="gender" class="block text-gray-700">Gender:</label>
+          <select id="gender" name="gender"
+            class="block w-full mt-3 bg-gray-100 border-gray-300 focus:ring focus:ring-blue-200 focus:bg-white rounded-md"
+            required>
+            <option value="" disabled selected>Select your gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Other</option>
+          </select>
         </div>
         <div class="relative mb-4">
           <label for="phone" class="leading-7 text-sm text-gray-600">Phone Number</label>
-          <input type="phone" id="phone" name="phone" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+          <input type="phone" id="phone" name="phone"
+            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+            required>
         </div>
-        <button class="block mx-auto w-full mt-4 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Sign up</button>
-        <button type="button" onclick="resetForm()" class="block mx-auto mt-4 bg-gray-500 text-white py-2 rounded-md hover:bg-gray-600 w-1/4">Reset</button>
-        <p class="text-xs text-gray-500 mt-3">Sign up now to access exclusive benefits and stay updated on the latest Schemes</p>
-      </div>
+        <button  type="submit"
+          class="block mx-auto w-full mt-4 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Sign
+          up</button>
+        <button type="button" onclick="resetForm()"
+          class="block mx-auto mt-4 bg-gray-500 text-white py-2 rounded-md hover:bg-gray-600 w-1/4">Reset</button>
+        <p class="text-xs text-gray-500 mt-3">Sign up now to access exclusive benefits and stay updated on the latest
+          Schemes</p>
+      </form>
     </div>
-    </div>
-    <script>
-        function resetForm() {
-            document.getElementById("myForm").reset();
-        }
-    </script>
-{% include 'footer.html' %}
+  </div>
+  </div>
+  <script>
+    function resetForm() {
+      document.getElementById("myForm").reset();
+    }
+    function submit() {
+      document.getElementById("myForm").submit();
+    }
+  </script>
+  {% include 'footer.html' %}
