@@ -57,8 +57,9 @@ def schemes():
 @app.route("/index")
 def index():
     return render_template("NEW/index.html")
+
 def read_json_data():
-    with open('src\static\data\schemes.json', 'r',encoding="utf-8") as f:
+    with open(r'src\static\data\schemes.json', 'r', encoding="utf-8") as f:
         data = f.read()
         data = json.loads(data)
         return data
