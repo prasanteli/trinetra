@@ -10,14 +10,14 @@ FYI
 TASKS
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 1. In FAQ , most of content is addressed to common CITIZENS , but the site is for WOMEN and Children, 
-    so modify it .
+    so modify it . -- completed
 2. Link "Terms & Conditions" from footer, to a licencse aafter understanding what are different types 
-    of licenses.
-3. LInk all of footer links
+    of licenses. -- completed
+3. LInk all of footer links -- completed
 4. In details_form "Fill the details to view your selected Schemes" should be better worded. 
-    eg "Enter you details to filter schemes applicable for you"
-5. In details_form , remove the button name as "SIngUP" and make it something like "Find my schemes" etc.
+    eg "Enter you details to filter schemes applicable for you" -- completed
+5. In details_form , remove the button name as "SIngUP" and make it something like "Find my schemes" etc. -- completed
 
--1. Improve carousel
+-1. Improve carousel -
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
