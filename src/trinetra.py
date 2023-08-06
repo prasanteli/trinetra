@@ -36,12 +36,6 @@ def footer():
 def header():
     return render_template("header.html")
 
-@app.route("/verification")
-def verification():
-    return render_template("verification.html")
-
-
-
 @app.route("/schemes")
 def schemes():
     with open('src\static\data\schemes.json', 'r',encoding="utf-8") as f:
