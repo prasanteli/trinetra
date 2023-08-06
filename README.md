@@ -1,23 +1,30 @@
-# Trinetra.
-moto of website is to look alike - https://www.myscheme.gov.in/
+# Trinetra
 
+[Credits & Inspiration](https://www.myscheme.gov.in/)
+  
+&nbsp;
 ## Basic Info
 
-- src has python code to flask server
-- any sensitive info should  be put into .flasken file
-
+- src folder has python code to flask server and html templates as well.
+- any sensitive info should  be put into .env file
+  
+&nbsp;
 ## Setup (for windows using command prompt)
 
-DO below three steps to activate virtual environment
+- Do below three steps to activate virtual environment
 
-- pip install virtualenv
-- virtualenv venv
-- virtualenv venv
+  - ```pip install virtualenv```
+  - ```virtualenv venv```
+  - ```venv\Scripts\activate.bat```
 
-Then to install requirements, do
+&nbsp;
+- Then to install requirements, do
+  - ```pip install -r .\requirements.txt```
+  
+&nbsp;
+- To run, any one of these will work based on how you installed your python and from which terminal you run.
+  - ```py src/trinetra.py```
+  - ```python3 src/trinetra.py```
+  
+&nbsp;
 
-- pip install -r .\requirements.txt
-
-To run
-
-- py src/trinetra.py
