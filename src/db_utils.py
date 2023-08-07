@@ -1,7 +1,7 @@
 import sqlite3  
 con = sqlite3.connect("user.db")  
 print("Database opened successfully")  
-con.execute("""drop table Users""")
+con.execute(""" drop table if exists Users """)
 con.execute("""
             create table Users (
             id INTEGER , 
