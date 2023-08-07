@@ -1,4 +1,11 @@
-.img{
+.img {
     border-radius: 50%;
 }
 
+input:valid {
+    background-color: palegreen;
+}
+
+input:invalid {
+    background-color: lightpink;
+}

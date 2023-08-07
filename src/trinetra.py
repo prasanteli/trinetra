@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request ,url_for
-import json
+from utils import read_json_data, filter_based_on_user
+from db_utils import con
+from user_model import User
 
 app = Flask(__name__)
 
@@ -24,45 +26,21 @@ def details_form():
         gender = request.values.get("gender")
         phone = request.values.get("phone")
         print ("\nname",name,"\nemail",email,"\nage",age,"\ngender",gender,"\nphone",phone)
-
+        curr_user = User( name, email, age, gender, phone)
+        check_if_old_user_else_save_user(curr_user)
         data = read_json_data()
-        # filter this data based on user info and return only those info in below return statement
+        data = filter_based_on_user(curr_user,data)
         return render_template("schemes.html",data = read_json_data())
     return render_template("details_form.html")
-
-# below are useless, ADD IMP ROUTES above 
-
-@app.route("/login")
-def login():
-    return render_template("login.html")
-
-@app.route("/footer")
-def footer():
-    return render_template("footer.html")
 
 @app.route("/terms_conditions")
 def terms_conditions():
     return render_template("terms_conditions.html")
 
-@app.route("/header")
-def header():
-    return render_template("header.html")
-
 @app.route("/schemes")
 def schemes():
     data = read_json_data()
     return render_template("schemes.html",data=data)
-    
-# --------------------------- NEW FLOW (from index page) ----------------------------
-@app.route("/index")
-def index():
-    return render_template("NEW/index.html")
-
-def read_json_data():
-    with open(r'src\static\data\schemes.json', 'r', encoding="utf-8") as f:
-        data = f.read()
-        data = json.loads(data)
-        return data
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000,  debug=True, load_dotenv=".env")
