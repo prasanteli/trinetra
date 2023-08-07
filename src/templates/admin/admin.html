@@ -1,12 +1,17 @@
-<!DOCTYPE html>  
-<html>  
-<head>  
-    <title>home</title>  
-</head>  
-<body>  
-    <h2>Hi, welcome to the website</h2>  
-    <a href="/add">Add Employee</a><br><br>  
-    <a href ="/view">List Records</a><br><br>  
-    <a href="/delete">Delete Record</a><br><br>  
-</body>  
-</html>  
+{% include 'header.html' %}
+
+<h2>Welcome to the ADMIN PANEL</h2><br>
+<a href="{{ url_for('add') }}">
+    <button  class="block mx-auto  mt-4 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+        Add User</button>
+</a><br><br>
+<a href="{{ url_for('view') }}">
+    <button class="block mx-auto  mt-4 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+        List Users</button></a>
+<br><br>
+<a href="{{ url_for('delete') }}">
+    <button class="block mx-auto  mt-4 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+        Delete User</button>
+</a><br><br>
+
+{% include 'footer.html' %}
