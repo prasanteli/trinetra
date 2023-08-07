@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request ,url_for
 from utils import read_json_data, filter_based_on_user
-from db_utils import con
+from db_utils import con, check_if_old_user_else_save_user
 from user_model import User
 
 app = Flask(__name__)
