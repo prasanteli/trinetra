@@ -9,3 +9,10 @@ input:valid {
 input:invalid {
     background-color: lightpink;
 }
+
+a{
+    color:blue;
+}
+table, th, td {
+    border: 1px solid black;
+  }
