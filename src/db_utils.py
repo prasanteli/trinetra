@@ -29,4 +29,4 @@ def check_if_old_user_else_save_user(user):
         return "User created"
     return "User already present"
 
-# con.close()  
+con.close()  

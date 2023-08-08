@@ -41,8 +41,18 @@
       </div>
       <button
         class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+        <button type="button" onclick="resetForm()"
+          class="block mx-auto mt-4 bg-gray-500 text-white py-2 rounded-md hover:bg-gray-600 w-1/4">Reset</button>
       <p class="text-xs text-gray-500 mt-3">Thank you</p>
     </div>
   </div>
 </section>
+<script>
+  function resetForm() {
+    document.getElementById("myForm").reset();
+  }
+  function submit() {
+    document.getElementById("myForm").submit();
+  }
+</script>
 {% include 'footer.html' %}

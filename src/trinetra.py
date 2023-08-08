@@ -17,6 +17,12 @@ def about_us():
 
 @app.route("/contact")
 def contact():
+    if request.method == "POST":
+        name = request.values.get("full-name")
+        email = request.values.get("email")
+        message = request.values.get("message")
+        print ("\nname",name,"\nemail",email,"\nmessage",message)
+        curr_user = User( name, email, message)
     return render_template("contact.html")
 
 @app.route("/details_form", methods=["GET","POST"])
