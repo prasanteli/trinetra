@@ -22,6 +22,8 @@ def contact():
         email = request.values.get("email")
         message = request.values.get("message")
         print ("\nname",name,"\nemail",email,"\nmessage",message)
+        data = read_json_data()
+        data = filter_based_on_user(curr_user,data)
         curr_user = User( name, email, message)
     return render_template("contact.html")
 

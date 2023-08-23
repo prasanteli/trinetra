@@ -1,29 +1,31 @@
 {% include 'header.html' %}
-  
-<h3>User Information</h3>  
-<table >  
-    <thead>  
-        <td>Name</td>  
-        <td>Email</td>
-        <td>Age</td>  
-        <td>Gender</td>  
-        <td>Phone</td>
-    </thead>  
-      
-    {% for row in rows %}  
-      
-        <tr>  
-            <td>{{row["name"]}}</td>  
-            <td>{{row["email"]}}</td>  
-            <td>{{row["age"]}}</td>  
-            <td>{{row["gender"]}}</td>  
-            <td>{{row["phone"]}}</td>  
-        </tr>  
-      
-    {% endfor %}  
-</table>  
-<br><br>  
-  
-<a href="/admin">Go back to admin-home page</a>  
+<body class="bg-gray-100">
+    <div class="max-w-4xl mx-auto p-6">
+        <h3 class="text-2xl font-semibold mt-4">List of Users</h3>
+        <table class="mt-4 w-full border-collapse bg-white shadow-md">
+            <thead>
+                <tr>
+                    <th class="border p-2 bg-gray-200">Name</th>
+                    <th class="border p-2 bg-gray-200">Email</th>
+                    <th class="border p-2 bg-gray-200">Age</th>
+                    <th class="border p-2 bg-gray-200">Gender</th>
+                    <th class="border p-2 bg-gray-200">Phone</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td class="border p-2">{{ row["name"] }}</td>
+                        <td class="border p-2">{{ row["email"] }}</td>
+                        <td class="border p-2">{{ row["age"] }}</td>
+                        <td class="border p-2">{{ row["gender"] }}</td>
+                        <td class="border p-2">{{ row["phone"] }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="/admin" class="block text-blue-500 mt-4">Go back to admin-home page</a>
+    </div>
+</body>
   
 {% include 'footer.html' %}
