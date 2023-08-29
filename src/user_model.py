@@ -1,5 +1,3 @@
-
-
 class User:
     def __init__(self, name, email, age, gender, phone):
         self.name = name
@@ -13,4 +11,4 @@ class User:
             return "Cant update phone number"
         else:
             exec("self."+field_name +"="+new_value)
-            pass
+        pass

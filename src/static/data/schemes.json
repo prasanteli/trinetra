@@ -1,65 +1,47 @@
 {
-    "Central Government Schemes": {
-        "Anila Yojane": {
-            "desc": "National Biogas Manure and Management Programme is a Centrally Sponsored Scheme being implemented since 1982-83. This is mainly 100% women programme. Biogas is a clean, non-polluting, smoke and soot-free fuel, containing methane gas produced from cattle dung, human waste and organic matter in a biogas plant through a process called anaerobic digestion. The digestion slurry can be used as a good quality manure in agricultural fields.",
-            "url": "http://rdpr.kar.nic.in/English/AnilaYojane.asp",
-            "age": 40
-            
-        },
-        "Mahatma Gandhi National Rural Employment Guarantee Act Scheme": {
-            "desc": "The Mahatma Gandhi National Rural Employment Guarantee Scheme (MNREGS) is Indian legislation enacted on August 25, 2005. The MGNREGA provides a legal guarantee for one hundred days of employment in every financial year to adult members of any rural household willing to do public work-related unskilled manual work at the statutory minimum wage. The Ministry of Rural Development (MRD),Govt of India is monitoring the entire implementation of this scheme in association with state governments",
-            "url ": "https://nrega.nic.in/MGNREGA_new/Nrega_home.aspx",
-            "age": 40
-            
-        },
-        "Sanjeevini": {
-            "desc": "The Government of India, Ministry of Rural Development has restructured SGSY as “Aajeevika”- National Rural Livelihoods Mission (NRLM) and being implemented from 2010-2011. The State Government is implementing this scheme in phases through Karnataka State Rural Livelihood Promotion Society in the name of “Sanjeevini”.",
-            "url": "http://rdpr.kar.nic.in/English/nrlm.asp",
-            "age": 40
-            
+    "Education & Learning": 
+    {
+        "Prabhuddha Overseas Scholarship": 
+        {
+            "desc": "The PRABHUDDHA OVERSEAS SCHOLARSHIP scheme aims to provide financial assistance to students belonging to the SC/ST communities who wish to pursue their undergraduate, postgraduate, and doctoral (PhD) programs in various fields of study. The scholarship is available for students studying in the fields of Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.",
+            "url": "https://swdservices.karnataka.gov.in/foreignstudies/",
+            "age": "21",
+            "benefits": "Financial assistance: The scheme provides financial assistance to students from SC/ST communities to pursue their undergraduate, postgraduate, and doctoral programs in various fields of study.\nField of study: The scholarship covers a wide range of fields of study, including Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.\nMerit-based: The scholarship is granted based on merit, and the selection process is highly competitive.\nIncome-based: The scholarship is available to students from families with an annual income of up to Rs 15 lakh.\nReservation: The scheme provides reservation for women and physically handicapped candidates, ensuring equal opportunities.\nEligibility criteria: The scheme has specific eligibility criteria, such as age limit, residency, qualifying marks, and scores in standardized tests.\nOverseas education: The scholarship allows students to pursue full-time degree programs at overseas universities/colleges, providing exposure to diverse cultures and learning environments.\nSupport for academic aspirations: The PRABHUDDHA OVERSEAS SCHOLARSHIP scheme aims to support deserving students from SC/ST communities in pursuing their academic aspirations and reaching their potential.",
+            "eligibility": "Residency: The applicant should be a permanent resident of Karnataka state in India.\nAge Limit: The age limit to apply for this scheme is 21 years for undergraduate courses, and 35 years for postgraduate and doctoral programs.\nQualifying Marks: Candidates applying for the scholarship must have scored at least 55% marks or equivalent grade in their qualifying degree exams for postgraduate and doctoral courses, and 80% marks or equivalent grade in qualifying exams (PUC/12th class) for undergraduate courses.\nStandardized Test Scores: The candidates should have cleared standardized tests like GRE/GMAT/TOEFL/IELTS exams with minimum score marks before applying for the scholarship.\nAdmission: Applicants should have secured admission into a full-time degree program at an overseas university/college.\nDocuments: The candidates must have the necessary documents like Aadhaar Card, Caste Certificate, Latest Income Certificate, Last 2 years IT Returns, Degree/Master Degree Convocation Certificate, Degree/Master Degree All Semester Marks Card, Offer letter from the university obtained, Copy of the Passport, and Tuition fee and maintenance fee as sent by the university.\nField of Study: The scholarship covers various fields of study, including Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.",
+            "documents_required": "Aadhaar card\nCaste certificate\nLatest income certificate (including details of both mother and father's income)\nLast 2 years IT returns\nDegree/master degree convocation certificate\nDegree/master degree all semester marks card\nOffer letter from the university obtained\nCopy of the passport\nTuition fee and maintenance fee details as sent by the university"
         },
 
-        "Scheme_name3": {
-            "desc": "Scheme Description",
-            "url": "url to govt page"
-        },
-
-        "Scheme_name3": {
-            "desc": "Scheme Description",
-            "url": "url to govt page"
-        },
-
-        "Scheme_name3": {
-            "desc": "Scheme Description",
-            "url": "url to govt page"
-        },
-
-        "Scheme_name3": {
-            "desc": "Scheme Description",
-            "url": "url to govt page"
-        },
-
-        "Scheme_name3": {
-            "desc": "Scheme Description",
-            "url": "url to govt page"
+        "Stipend To Law Graduates": 
+        {
+            "desc": "The main objective of this scheme is to provide financial assistance in the form of a stipend to law graduates belonging to the SC/ST Communities so as to help them to practice in various courts and to do various training courses.",
+            "url": "https://swdservices.karnataka.gov.in/foreignstudies/",
+            "age": "21",
+            "benefits": "Financial assistance: The scheme provides financial assistance to students from SC/ST communities to pursue their undergraduate, postgraduate, and doctoral programs in various fields of study.\nField of study: The scholarship covers a wide range of fields of study, including Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.\nMerit-based: The scholarship is granted based on merit, and the selection process is highly competitive.\nIncome-based: The scholarship is available to students from families with an annual income of up to Rs 15 lakh.\nReservation: The scheme provides reservation for women and physically handicapped candidates, ensuring equal opportunities.\nEligibility criteria: The scheme has specific eligibility criteria, such as age limit, residency, qualifying marks, and scores in standardized tests.\nOverseas education: The scholarship allows students to pursue full-time degree programs at overseas universities/colleges, providing exposure to diverse cultures and learning environments.\nSupport for academic aspirations: The PRABHUDDHA OVERSEAS SCHOLARSHIP scheme aims to support deserving students from SC/ST communities in pursuing their academic aspirations and reaching their potential.",
+            "eligibility": "Residency: The applicant should be a permanent resident of Karnataka state in India.\nAge Limit: The age limit to apply for this scheme is 21 years for undergraduate courses, and 35 years for postgraduate and doctoral programs.\nQualifying Marks: Candidates applying for the scholarship must have scored at least 55% marks or equivalent grade in their qualifying degree exams for postgraduate and doctoral courses, and 80% marks or equivalent grade in qualifying exams (PUC/12th class) for undergraduate courses.\nStandardized Test Scores: The candidates should have cleared standardized tests like GRE/GMAT/TOEFL/IELTS exams with minimum score marks before applying for the scholarship.\nAdmission: Applicants should have secured admission into a full-time degree program at an overseas university/college.\nDocuments: The candidates must have the necessary documents like Aadhaar Card, Caste Certificate, Latest Income Certificate, Last 2 years IT Returns, Degree/Master Degree Convocation Certificate, Degree/Master Degree All Semester Marks Card, Offer letter from the university obtained, Copy of the Passport, and Tuition fee and maintenance fee as sent by the university.\nField of Study: The scholarship covers various fields of study, including Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.",
+            "documents_required": "Aadhaar card\nCaste certificate\nLatest income certificate (including details of both mother and father's income)\nLast 2 years IT returns\nDegree/master degree convocation certificate\nDegree/master degree all semester marks card\nOffer letter from the university obtained\nCopy of the passport\nTuition fee and maintenance fee details as sent by the university"
         }
-        
     },
-
-    "Karntaka State Govermnet Schemes": {
-        
-        "Incentive For The Sc Widow Remarriage": {
-            "desc": "This scheme is aimed at encouraging widows to remarry by providing financial assistance to lead a normal life. The main objective of the scheme is to promote widow remarriage and rehabilitate widows by providing financial assistance. This scheme brings in a new dimension of social change among the widows. Under this scheme, the Social Welfare Department, Government of Karnataka will give incentives to the remarried widows belonging to the SC Community. The incentive amount is ₹ 3 Lakh. The incentive is provided only to those who have submitted applications within 1 year of marriage. There is no annual income limit for this scheme. The widow should belong to SC Community.  Spouses can belong to any Caste/Religion.",
-            "url": "https://sw.kar.nic.in/swincentive/WRM/WRMHAHome.asp"
-        },
-        "Scheme_name3": {
-            "desc": "Scheme Description",
-            "url": "url to govt page"
-        },
-        "Scheme_name4": {
-            "desc": "Scheme Description",
-            "url": "url to govt page"
+    "Mahatma Gandhi National Rural Employment Guarantee Act Scheme": 
+    {
+        "Prabhuddha Overseas Scholarship": {
+            "desc": "The Mahatma Gandhi National Rural Employment Guarantee Scheme (MNREGS) is Indian legislation enacted on August 25, 2005...",
+            "url": "https://nrega.nic.in/MGNREGA_new/Nrega_home.aspx",
+            "age": "21",
+            "Benefits": "Financial assistance, Reservation, Overseas education",
+            "Eligibility": "Residency",
+            "Documents Required": "Aadhar card"
         }
-
+    },
+    "Sanjeevini": 
+    {
+        "Prabhuddha Overseas Scholarship": 
+        {
+            "desc": "The PRABHUDDHA OVERSEAS SCHOLARSHIP scheme aims to provide financial assistance to students belonging to the SC/ST communities who wish to pursue their undergraduate, postgraduate, and doctoral (PhD) programs in various fields of study. The scholarship is available for students studying in the fields of Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.",
+            "url": "https://swdservices.karnataka.gov.in/foreignstudies/",
+            "age": "21",
+            "benefits": "Financial assistance: The scheme provides financial assistance to students from SC/ST communities to pursue their undergraduate, postgraduate, and doctoral programs in various fields of study.\nField of study: The scholarship covers a wide range of fields of study, including Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.\nMerit-based: The scholarship is granted based on merit, and the selection process is highly competitive.\nIncome-based: The scholarship is available to students from families with an annual income of up to Rs 15 lakh.\nReservation: The scheme provides reservation for women and physically handicapped candidates, ensuring equal opportunities.\nEligibility criteria: The scheme has specific eligibility criteria, such as age limit, residency, qualifying marks, and scores in standardized tests.\nOverseas education: The scholarship allows students to pursue full-time degree programs at overseas universities/colleges, providing exposure to diverse cultures and learning environments.\nSupport for academic aspirations: The PRABHUDDHA OVERSEAS SCHOLARSHIP scheme aims to support deserving students from SC/ST communities in pursuing their academic aspirations and reaching their potential.",
+            "eligibility": "Residency: The applicant should be a permanent resident of Karnataka state in India.\nAge Limit: The age limit to apply for this scheme is 21 years for undergraduate courses, and 35 years for postgraduate and doctoral programs.\nQualifying Marks: Candidates applying for the scholarship must have scored at least 55% marks or equivalent grade in their qualifying degree exams for postgraduate and doctoral courses, and 80% marks or equivalent grade in qualifying exams (PUC/12th class) for undergraduate courses.\nStandardized Test Scores: The candidates should have cleared standardized tests like GRE/GMAT/TOEFL/IELTS exams with minimum score marks before applying for the scholarship.\nAdmission: Applicants should have secured admission into a full-time degree program at an overseas university/college.\nDocuments: The candidates must have the necessary documents like Aadhaar Card, Caste Certificate, Latest Income Certificate, Last 2 years IT Returns, Degree/Master Degree Convocation Certificate, Degree/Master Degree All Semester Marks Card, Offer letter from the university obtained, Copy of the Passport, and Tuition fee and maintenance fee as sent by the university.\nField of Study: The scholarship covers various fields of study, including Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.",
+            "documents_required": "Aadhaar card\nCaste certificate\nLatest income certificate (including details of both mother and father's income)\nLast 2 years IT returns\nDegree/master degree convocation certificate\nDegree/master degree all semester marks card\nOffer letter from the university obtained\nCopy of the passport\nTuition fee and maintenance fee details as sent by the university"
+        }
     }
 }

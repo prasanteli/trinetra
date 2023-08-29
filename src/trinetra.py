@@ -27,20 +27,23 @@ def contact():
         curr_user = User( name, email, message)
     return render_template("contact.html")
 
-@app.route("/details_form", methods=["GET","POST"])
+@app.route("/details_form", methods=["GET", "POST"])
 def details_form():
     if request.method == "POST":
         name = request.values.get("full-name")
         email = request.values.get("email")
-        age = request.values.get("age")
+        age = int(request.values.get("age"))  # Convert age to integer
         gender = request.values.get("gender")
         phone = request.values.get("phone")
-        print ("\nname",name,"\nemail",email,"\nage",age,"\ngender",gender,"\nphone",phone)
-        curr_user = User( name, email, age, gender, phone)
+        
+        curr_user = User(name, email, age, gender, phone)
         print(check_if_old_user_else_save_user(curr_user))
+        
         data = read_json_data()
-        data = filter_based_on_user(curr_user,data)
-        return render_template("schemes.html",data = read_json_data())
+        data = filter_based_on_user(curr_user, data)
+        
+        return render_template("schemes.html", data=data)  # Display all schemes without age filtering
+    
     return render_template("details_form.html")
 
 @app.route("/terms_conditions")
@@ -57,26 +60,39 @@ def admin():
 def add():  
     return render_template("admin/add.html")  
  
-@app.route("/admin/savedetails",methods = ["POST","GET"])  
-def saveDetails():  
-    msg = "msg"  
-    if request.method == "POST":  
-        try:  
+@app.route("/admin/savedetails", methods=["POST", "GET"])
+def saveDetails():
+    msg = "msg"
+    
+    if request.method == "POST":
+        try:
             name = request.values.get("full-name")
             email = request.values.get("email")
-            age = request.values.get("age")
+            age = int(request.values.get("age"))  # Convert age to integer
             gender = request.values.get("gender")
             phone = request.values.get("phone")
-            with sqlite3.connect("user.db") as con:  
-                cur = con.cursor()  
-                cur.execute("INSERT into Users (name, email, age, gender, phone) values (?,?,?,?,?)",(name, email, age, gender, phone))  
-                con.commit()  
-                msg = "User successfully Added"  
-        except:  
-            con.rollback()  
-            msg = "We can not add the user to the list. Either user already exist or information is in wrong format"  
-        finally:  
-            return render_template("admin/success.html",msg = msg)  
+            
+            with sqlite3.connect("user.db") as con:
+                cur = con.cursor()
+                
+                # Check if the phone number already exists
+                cur.execute("SELECT phone FROM Users WHERE phone = ?", (phone,))
+                existing_phone = cur.fetchone()
+                if existing_phone:
+                    msg = "User with this phone number already exists"
+                else:
+                    cur.execute("INSERT INTO Users (name, email, age, gender, phone) VALUES (?, ?, ?, ?, ?)",
+                                (name, email, age, gender, phone))
+                    con.commit()
+                    msg = "User successfully Added"
+        except:
+            con.rollback()
+            msg = "We cannot add the user to the list. Either the user already exists or the information is in the wrong format"
+
+        finally:
+            return render_template("admin/success.html", msg=msg)
+        
+        
  
 @app.route("/admin/view")  
 def view():  
@@ -92,18 +108,21 @@ def view():
 def delete():  
     return render_template("admin/delete.html")  
  
-@app.route("/admin/delete_record",methods = ["POST"])  
-def deleterecord():  
-    phone = request.form["phone"]  
-    with sqlite3.connect("user.db") as con:  
-        try:  
-            cur = con.cursor()  
-            cur.execute("delete from Users where phone = ?",phone)  
-            msg = "User successfully deleted"  
-        except:  
-            msg = "Wrong info. This phone no doesnt exist in DB"  
-        finally:  
-            return render_template("admin/delete_record.html",msg = msg)  
+@app.route("/admin/delete_record", methods=["POST"])
+def deleterecord():
+    phone = request.form["phone"]
+    
+    with sqlite3.connect("user.db") as con:
+        try:
+            cur = con.cursor()
+            cur.execute("DELETE FROM Users WHERE phone = ?", (phone,))
+            con.commit()
+            msg = "User successfully deleted"
+        except sqlite3.Error:
+            con.rollback()
+            msg = "Wrong info. This phone number doesn't exist in the database"
+        finally:
+            return render_template("admin/delete_record.html", msg=msg)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000,  debug=True, load_dotenv=".env")
