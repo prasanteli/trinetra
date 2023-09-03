@@ -32,7 +32,7 @@ def details_form():
     if request.method == "POST":
         name = request.values.get("full-name")
         email = request.values.get("email")
-        age = int(request.values.get("age"))  # Convert age to integer
+        age = int(request.values.get("age"))  
         gender = request.values.get("gender")
         phone = request.values.get("phone")
         
@@ -42,9 +42,10 @@ def details_form():
         data = read_json_data()
         data = filter_based_on_user(curr_user, data)
         
-        return render_template("schemes.html", data=data)  # Display all schemes without age filtering
+        return render_template("schemes.html", data=data)
     
     return render_template("details_form.html")
+
 
 @app.route("/terms_conditions")
 def terms_conditions():

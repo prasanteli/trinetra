@@ -1,34 +1,37 @@
 {% include 'header.html' %}
 
-<section class="text-gray-600 body-font overflow-hidden">
-  <div class="container px-5 py-24 mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<section class="text-black body-font overflow-hidden">
+  <div class="container px-5 py-24 mx-auto mb-8">
+    <div class="container mx-auto my-8">
       {% for cat_name, cat_data in data.items() %}
-        <div class="bg-white rounded-lg shadow-md p-6">
+        <div class="bg-white rounded-lg shadow-md p-6 mb-2">
           <details>
-            <summary class="cursor-pointer text-blue-500 text-xl mb-4">{{ cat_name }}</summary>
-            <div class="mt-2">
-              {% for scheme_name, scheme_info in cat_data.items() %}
-              <summary class="cursor-pointer text-grey-500 text-xl mb-4">{{ scheme_name }}</summary>
-              <div class="mt-2">
-              {% for scheme_name, scheme_info in cat_data.items() %}
-                <p class="leading-relaxed">{{ scheme_info.desc }}</p>
-                <p class="mt-2"><strong>Age:</strong> {{ scheme_info.age }}</p>
-                <p class="mt-2"><strong>Benefits:</strong> {{ scheme_info.benefits }}</p>
-                <p class="mt-2"><strong>Eligibility:</strong> {{ scheme_info.eligibility }}</p>
-                <p class="mt-2"><strong>Documents Required:</strong> {{ scheme_info.documents_required }}</p>
-                <a href="{{ scheme_info.url }}" target="_blank" rel="noopener noreferrer"
-                class="text-indigo-500 inline-flex items-center mt-2">
-               Open the link
-               <svg class="w-4 h-4 ml-1" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"
-                 stroke-linecap="round" stroke-linejoin="round">
-                 <path d="M5 12h14"></path>
-                 <path d="M12 5l7 7-7 7"></path>
-               </svg>
-             </a></br></br>
-             {% endfor %}
-             {% endfor %}
-            </div>
+            <summary class="cursor-pointer text-blue-500 text-2xl font-bold mb-4">{{ cat_name }}</summary>
+              <div class="container mx-auto">
+                <div class="flex border-2 rounded-lg border-gray-200 border-opacity-50 p-2 sm:flex-row flex-col">
+                  <div class="mt-4">
+                    {% for scheme_name, scheme_info in cat_data.items() %}
+                      <div class="bg-gray-100 mt-4 p-4 rounded-lg">
+                        <details>
+                          <summary class="cursor-pointer text-xl font-bold text-gray-900">{{ scheme_name }}</summary>
+                          <p class="leading-relaxed mt-2">{{ scheme_info.desc }}</p>
+                          <p class="mt-2"><strong>Age:</strong> {{ scheme_info.age }}</p>
+                          <p class="mt-2"><strong>Benefits:</strong> {{ scheme_info.benefits }}</p>
+                          <p class="mt-2"><strong>Eligibility:</strong> {{ scheme_info.eligibility }}</p>
+                          <p class="mt-2"><strong>Documents Required:</strong> {{ scheme_info.documents_required }}</p>
+                          <a href="{{ scheme_info.url }}" target="_blank" rel="noopener noreferrer" class="text-indigo-500 inline-flex items-center mt-2">
+                            Apply link
+                            <svg class="w-4 h-4 ml-1" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M5 12h14"></path>
+                              <path d="M12 5l7 7-7 7"></path>
+                            </svg>
+                          </a>
+                        </details>
+                      </div>
+                    {% endfor %}
+                  </div>
+                </div>
+              </div>
           </details>
         </div>
       {% endfor %}

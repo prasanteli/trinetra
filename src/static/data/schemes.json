@@ -11,19 +11,67 @@
             "documents_required": "Aadhaar card\nCaste certificate\nLatest income certificate (including details of both mother and father's income)\nLast 2 years IT returns\nDegree/master degree convocation certificate\nDegree/master degree all semester marks card\nOffer letter from the university obtained\nCopy of the passport\nTuition fee and maintenance fee details as sent by the university"
         },
 
+        "National Overseas Scholarship For Scheduled Caste": 
+        {
+            "desc": "A scholarship scheme by Ministry of Social Justice & Empowerment for regular, full-time students from Scheduled Castes, Denotified Nomadic and Semi Nomadic Tribes, Landless Agricultural Labourers and Traditional Artisans; to obtain higher education viz., Master degree or Ph.D courses by studying abroad in Institutions/Universities accredited by the Government/authorized body of that country in any field of study.",
+            "url": "https://www.nosmsje.gov.in",
+            "age": "21",
+            "benefits": "Annual Maintenance Allowance: For the United States of America (USA) & other countries except for the UK: 15400 US Dollars. For United Kingdom (UK): 9900 Great Britain PoundsContingency Allowance: For the United States of America (USA) & other countries except for the UK: 1500 US Dollars. For United Kingdom (UK): 1100 Great Britain PoundsTuition Fees: Actual as chargedVisa Fees: Actual Visa Fees in INRMedical Insurance Premium: Actual as chargedIncidental Journey Allowance & Equipment Allowance: 20 US Dollars for each or its equivalent in INR.Air Passage",
+            "eligibility": "The applicant must be a student belonging to a Scheduled Caste, Denotified Nomadic, Semi Nomadic Tribe, Landless Agricultural Labourer, or a Traditional Artisan.The applicant must have been admitted to or received an unconditional offer of admission for pursuing a master's / Ph.D. from an institute/university located abroad.The institute/university of the applicant must be accredited by the Government/authorized body of that country.The applicant must have secured at least 60% marks or equivalent grade in the qualifying examination (In the case of Ph.D. courses, the qualifying exam is a Master’s Degree; In the case of a Master’s Degree, the qualifying exam is a Bachelor's Degree)The total income of the family of the applicant (from all sources) is less than or equal to ₹ 8 lakh per annum.Two or more of the applicant's siblings must not be already availing of this scholarship.In case a student has completed a Bachelor of Engineering after completing a Diploma (Lateral Entry to 2nd year), the percentage of marks obtained in Bachelor's degree will be taken into account.",
+            "documents_required": "10th Board Certificate, Caste Certificate (Refer Source for Format),Photo, Scanned Signature, Current Address proof/Permanent Address Proof (if from current address)"
+        },
+
         "Stipend To Law Graduates": 
         {
             "desc": "The main objective of this scheme is to provide financial assistance in the form of a stipend to law graduates belonging to the SC/ST Communities so as to help them to practice in various courts and to do various training courses.",
             "url": "https://swdservices.karnataka.gov.in/foreignstudies/",
-            "age": "21",
+            "age": "18",
             "benefits": "Financial assistance: The scheme provides financial assistance to students from SC/ST communities to pursue their undergraduate, postgraduate, and doctoral programs in various fields of study.\nField of study: The scholarship covers a wide range of fields of study, including Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.\nMerit-based: The scholarship is granted based on merit, and the selection process is highly competitive.\nIncome-based: The scholarship is available to students from families with an annual income of up to Rs 15 lakh.\nReservation: The scheme provides reservation for women and physically handicapped candidates, ensuring equal opportunities.\nEligibility criteria: The scheme has specific eligibility criteria, such as age limit, residency, qualifying marks, and scores in standardized tests.\nOverseas education: The scholarship allows students to pursue full-time degree programs at overseas universities/colleges, providing exposure to diverse cultures and learning environments.\nSupport for academic aspirations: The PRABHUDDHA OVERSEAS SCHOLARSHIP scheme aims to support deserving students from SC/ST communities in pursuing their academic aspirations and reaching their potential.",
             "eligibility": "Residency: The applicant should be a permanent resident of Karnataka state in India.\nAge Limit: The age limit to apply for this scheme is 21 years for undergraduate courses, and 35 years for postgraduate and doctoral programs.\nQualifying Marks: Candidates applying for the scholarship must have scored at least 55% marks or equivalent grade in their qualifying degree exams for postgraduate and doctoral courses, and 80% marks or equivalent grade in qualifying exams (PUC/12th class) for undergraduate courses.\nStandardized Test Scores: The candidates should have cleared standardized tests like GRE/GMAT/TOEFL/IELTS exams with minimum score marks before applying for the scholarship.\nAdmission: Applicants should have secured admission into a full-time degree program at an overseas university/college.\nDocuments: The candidates must have the necessary documents like Aadhaar Card, Caste Certificate, Latest Income Certificate, Last 2 years IT Returns, Degree/Master Degree Convocation Certificate, Degree/Master Degree All Semester Marks Card, Offer letter from the university obtained, Copy of the Passport, and Tuition fee and maintenance fee as sent by the university.\nField of Study: The scholarship covers various fields of study, including Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.",
             "documents_required": "Aadhaar card\nCaste certificate\nLatest income certificate (including details of both mother and father's income)\nLast 2 years IT returns\nDegree/master degree convocation certificate\nDegree/master degree all semester marks card\nOffer letter from the university obtained\nCopy of the passport\nTuition fee and maintenance fee details as sent by the university"
+        },
+
+        "Award Of Scholarships To Young Artists In Different Cultural Fields": 
+        {
+            "desc": "The scheme “Award of Scholarships to Young Artists in Different Cultural Fields” was launched by the Ministry of Culture, Government of India. This scheme seeks to give assistance to young artists of outstanding promise for advanced training within India in the field of Indian Classical Music, Indian Classical Dance, Theatre, Mime, Visual art, Folk, Traditional and Indigenous Arts, and Light Classical Music..",
+            "url": "https://indiaculture.gov.in//",
+            "age": "18",
+            "benefits": "Financial assistance: The scheme provides financial assistance to students from SC/ST communities to pursue their undergraduate, postgraduate, and doctoral programs in various fields of study.\nField of study: The scholarship covers a wide range of fields of study, including Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.\nMerit-based: The scholarship is granted based on merit, and the selection process is highly competitive.\nIncome-based: The scholarship is available to students from families with an annual income of up to Rs 15 lakh.\nReservation: The scheme provides reservation for women and physically handicapped candidates, ensuring equal opportunities.\nEligibility criteria: The scheme has specific eligibility criteria, such as age limit, residency, qualifying marks, and scores in standardized tests.\nOverseas education: The scholarship allows students to pursue full-time degree programs at overseas universities/colleges, providing exposure to diverse cultures and learning environments.\nSupport for academic aspirations: The PRABHUDDHA OVERSEAS SCHOLARSHIP scheme aims to support deserving students from SC/ST communities in pursuing their academic aspirations and reaching their potential.",
+            "eligibility": "Residency: The applicant should be a permanent resident of Karnataka state in India.\nAge Limit: The age limit to apply for this scheme is 21 years for undergraduate courses, and 35 years for postgraduate and doctoral programs.\nQualifying Marks: Candidates applying for the scholarship must have scored at least 55% marks or equivalent grade in their qualifying degree exams for postgraduate and doctoral courses, and 80% marks or equivalent grade in qualifying exams (PUC/12th class) for undergraduate courses.\nStandardized Test Scores: The candidates should have cleared standardized tests like GRE/GMAT/TOEFL/IELTS exams with minimum score marks before applying for the scholarship.\nAdmission: Applicants should have secured admission into a full-time degree program at an overseas university/college.\nDocuments: The candidates must have the necessary documents like Aadhaar Card, Caste Certificate, Latest Income Certificate, Last 2 years IT Returns, Degree/Master Degree Convocation Certificate, Degree/Master Degree All Semester Marks Card, Offer letter from the university obtained, Copy of the Passport, and Tuition fee and maintenance fee as sent by the university.\nField of Study: The scholarship covers various fields of study, including Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.",
+            "documents_required": "Aadhaar card\nCaste certificate\nLatest income certificate (including details of both mother and father's income)\nLast 2 years IT returns\nDegree/master degree convocation certificate\nDegree/master degree all semester marks card\nOffer letter from the university obtained\nCopy of the passport\nTuition fee and maintenance fee details as sent by the university"
+        },
+
+        "Scheme For Grant Of Rewards To The Children Of Salt Labourers": 
+        {
+            "desc": "The scheme “Scheme for Grant of Rewards to the Children of Salt Labourers” was launched by Department for Promotion of Industry and Internal Trade (DPIIT), Ministry of Commerce and Industry in the year 1985. Initially, the scheme known as “Scheme for grant of rewards to the children of labourers working in Salt Industry (CRS)” was initiated for granting 20 rewards to the children of the salt workers to enable them to meet the initial expenses either partly or wholly for purchase of books, stationeries, etc., on admission to recognized institutes for higher studies.",
+            "url": "https://dpiit.gov.in/programmes-and-schemes/others/scheme-grant-rewards-children-salt-labourers",
+            "age": "18",
+            "benefits": "The rewards shall be granted once in each academic year to the meritorious children of salt workers to enable the students to meet the initial expenses either partly or wholly for the purchase of books, stationery, etc. on admission to a recognized Institute, recognized by the State/Central Government.The rewards shall be granted to the students of the salt workers in cash",
+            "eligibility": "The children of only those salt workers who have put in a minimum of one year of continuous service in any of the salt works & passing from a recognized Government School are eligible to apply under the scheme.A child of a salt worker should be studying in Class VI to XII.A child of a salt worker to be eligible for a reward should have passed the examination in the first attempt.",
+            "documents_required": "Aadhaar card\nCaste certificate\nLatest income certificate (including details of both mother and father's income)\nLast 2 years IT returns\nDegree/master degree convocation certificate\nDegree/master degree all semester marks card\nOffer letter from the university obtained\nCopy of the passport\nTuition fee and maintenance fee details as sent by the university"
         }
     },
-    "Mahatma Gandhi National Rural Employment Guarantee Act Scheme": 
+    "Social welfare & Empowerment": 
     {
-        "Prabhuddha Overseas Scholarship": {
+        "Bhagyalaxmi Scheme": {
+            "desc": "The Karnataka state government will give female children financial aid under the Karnataka Bhagya Lakshmi Scheme. The payment of this support is to be made through the mother, father, or legal guardian provided that all requirements are met.",
+            "url": "http://blakshmi.kar.nic.in:8080/First.jsp",
+            "age": "18",
+            "Benefits": "Financial assistance, Reservation, Overseas education",
+            "Eligibility": "Residency",
+            "Documents Required": "Aadhar card"
+        },
+
+        "One Nation One Ration Card": {
+            "desc": "The Mahatma Gandhi National Rural Employment Guarantee Scheme (MNREGS) is Indian legislation enacted on August 25, 2005...",
+            "url": "https://nrega.nic.in/MGNREGA_new/Nrega_home.aspx",
+            "age": "21",
+            "Benefits": "Financial assistance, Reservation, Overseas education",
+            "Eligibility": "Residency",
+            "Documents Required": "Aadhar card"
+        },
+
+        "One Nation One Ration Card": {
             "desc": "The Mahatma Gandhi National Rural Employment Guarantee Scheme (MNREGS) is Indian legislation enacted on August 25, 2005...",
             "url": "https://nrega.nic.in/MGNREGA_new/Nrega_home.aspx",
             "age": "21",
@@ -31,6 +79,7 @@
             "Eligibility": "Residency",
             "Documents Required": "Aadhar card"
         }
+
     },
     "Sanjeevini": 
     {
@@ -43,5 +92,5 @@
             "eligibility": "Residency: The applicant should be a permanent resident of Karnataka state in India.\nAge Limit: The age limit to apply for this scheme is 21 years for undergraduate courses, and 35 years for postgraduate and doctoral programs.\nQualifying Marks: Candidates applying for the scholarship must have scored at least 55% marks or equivalent grade in their qualifying degree exams for postgraduate and doctoral courses, and 80% marks or equivalent grade in qualifying exams (PUC/12th class) for undergraduate courses.\nStandardized Test Scores: The candidates should have cleared standardized tests like GRE/GMAT/TOEFL/IELTS exams with minimum score marks before applying for the scholarship.\nAdmission: Applicants should have secured admission into a full-time degree program at an overseas university/college.\nDocuments: The candidates must have the necessary documents like Aadhaar Card, Caste Certificate, Latest Income Certificate, Last 2 years IT Returns, Degree/Master Degree Convocation Certificate, Degree/Master Degree All Semester Marks Card, Offer letter from the university obtained, Copy of the Passport, and Tuition fee and maintenance fee as sent by the university.\nField of Study: The scholarship covers various fields of study, including Engineering and Management, Pure Sciences and applied sciences, Agriculture sciences and medicine, International Commerce, Economics, Accounting Finance, Humanities, Social science, fine arts, and law.",
             "documents_required": "Aadhaar card\nCaste certificate\nLatest income certificate (including details of both mother and father's income)\nLast 2 years IT returns\nDegree/master degree convocation certificate\nDegree/master degree all semester marks card\nOffer letter from the university obtained\nCopy of the passport\nTuition fee and maintenance fee details as sent by the university"
         }
-    }
+    }  
 }
