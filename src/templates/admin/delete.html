@@ -1,15 +1,20 @@
-{% include 'header.html' %}  
+{% include 'header.html' %}
 
-    <h3>Remove User from the list</h3>  
-  
-<form action="{{url_for('deleterecord')}}" method="post">  
+<div class="container mx-auto px-4 py-8">
+  <h3 class="text-2xl font-semibold text-gray-800">Remove User from the List</h3>
+
+  <form action="{{ url_for('deleterecord') }}" method="post" class="mt-4">
     <div class="relative mb-4">
-        <label for="phone" class="leading-7 text-sm text-gray-600">Phone Number</label>
-        <input type="phone" id="phone" name="phone" pattern="(7|8|9)\d{9}"
-            class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
-            required>
+      <label for="phone" class="block text-sm text-gray-600">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" pattern="(7|8|9)\d{9}"
+        class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-2 px-4 leading-8 transition-colors duration-200 ease-in-out"
+        required>
     </div>
-<input type="submit" value="Submit">  
-</form>  
- 
+    <button type="submit"
+      class="w-full bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 focus:outline-none focus:bg-indigo-600">
+      Submit
+    </button>
+  </form>
+</div>
+
 {% include 'footer.html' %}
